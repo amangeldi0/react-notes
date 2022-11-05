@@ -1,0 +1,10 @@
+.wrapper__container{
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background: white;
+}
+.wrapper__container__black{
+  @extend .wrapper__container;
+  background: rgba(43, 48, 61, 0.97);
+}
