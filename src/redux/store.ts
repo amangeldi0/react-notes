@@ -1,11 +1,13 @@
 import { configureStore} from '@reduxjs/toolkit';
 import themeSlice from "./Theme/ThemeSlice";
 import searchSlice from "./Search/SearchSlice";
+import noteSlice from "./Note/NoteSlice"
 
 export const store = configureStore({
   reducer: {
     themeSlice,
-    searchSlice
+    searchSlice,
+    noteSlice
   },
 });
 
