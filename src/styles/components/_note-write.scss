@@ -1,0 +1,94 @@
+.note__input__container{
+  width: 400px;
+  height: 430px;
+  border-radius: 10px;
+  background: white;
+  margin: 0 auto;
+  box-shadow: 0 0 6px 1px rgba(221, 221, 221, 1);
+  @media (max-width: 450px) {
+    width: 380px;
+  }
+  @media (max-width: 430px) {
+    width: 300px;
+  }
+  @media (max-width: 340px) {
+    width: 280px;
+  }
+  .note__write{
+    display: flex;
+    margin-left: 25px;
+    align-items: start;
+    gap: 10px;
+    flex-direction: column;
+    padding-top: 15px;
+    @media (max-width: 430px) {
+      margin-left: 15px;
+    }
+    input{
+      background: transparent;
+      padding: 5px 15px;
+      width: 90%;
+      border: none;
+      font-size: 20px;
+      color: $black;
+      @media (max-width: 430px) {
+        font-size: 18px;
+      }
+    }
+    textarea{
+      border: none;
+      background: transparent;
+      font-size: 17px;
+      color: $black;
+      padding: 10px 15px;
+      resize: none;
+      width: 92%;
+      height: 310px;
+      @media (max-width: 430px) {
+        font-size: 16px;
+      }
+    }
+  }
+  .note__save{
+    @extend %center;
+    padding-top: 15px;
+    button{
+      padding: 5px 20px;
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      border-radius: 3px;
+      &:hover{
+        background: rgba(128, 128, 128, 0.41);
+        color: #fff;
+      }
+    }
+  }
+}
+.note__input__container__black{
+  @extend .note__input__container;
+  background: rgba(60, 66, 84, 0.98);
+  box-shadow: 0 0 6px 1px rgba(60, 66, 84, 0.98);
+  .note__write{
+    input{
+      color: white;
+      &::placeholder{
+        color: rgba(255, 255, 255, 0.53);
+      }
+    }
+    textarea{
+      color: white;
+      &::placeholder{
+        color: rgba(255, 255, 255, 0.53);
+      }
+    }
+  }
+  .note__save{
+    button{
+      color: white;
+      &:hover{
+        background-color: rgba(91, 86, 86, 0.33);
+      }
+    }
+  }
+}
