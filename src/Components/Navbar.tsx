@@ -1,8 +1,8 @@
-import React from 'react';
+import {FC} from 'react';
 import {useAppDispatch, useAppSelector} from "../redux/hooks";
 import {changeTheme} from "../redux/Theme/ThemeSlice";
 import {theme} from "../redux/Theme/ThemeSlice";
-const Navbar = () => {
+const Navbar: FC = () => {
     const dispatch = useAppDispatch()
     const themeState = useAppSelector(theme)
 
