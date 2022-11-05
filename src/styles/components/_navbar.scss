@@ -2,9 +2,8 @@
 .navbar__wrapper{
   background: $white;
   .navbar__container{
-    width: 90%;
     height: 70px;
-    margin: 0 auto;
+    @extend %ots;
     @extend %content;
     .navbar__logo{
       font-size: 28px;
