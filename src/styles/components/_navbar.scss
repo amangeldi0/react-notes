@@ -1,0 +1,40 @@
+
+.navbar__wrapper{
+  background: $white;
+  .navbar__container{
+    width: 90%;
+    height: 70px;
+    margin: 0 auto;
+    @extend %content;
+    .navbar__logo{
+      font-size: 28px;
+      color: white;
+      @media (max-width: 485px) {
+        font-size: 24px;
+      }
+    }
+    .navbar__button{
+      background: transparent;
+      padding: 10px 10px;
+      font-size: 17px;
+      border: none;
+      color: white;
+      transition: all 0.4s;
+      &:hover{
+        background: rgba(66, 165, 245, 0.34);
+      }
+    }
+  }
+}
+.navbar__wrapper_black{
+  @extend .navbar__wrapper;
+  background-color: $black;
+  .navbar__container{
+    .navbar__button{
+      &:hover{
+        background-color: rgba(91, 86, 86, 0.33);
+      }
+    }
+  }
+}
+
