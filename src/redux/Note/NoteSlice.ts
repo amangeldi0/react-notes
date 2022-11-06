@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "../store";
 
-interface NoteSliceItem {
+export interface NoteSliceItem {
     id:string
     title: string,
     note: string,
@@ -12,20 +12,7 @@ interface NoteSliceType {
 }
 
 const initialState:NoteSliceType = {
-    notes: [
-        {
-            id: '122',
-            title: 'My first note',
-            note: 'something kasjfhdlkasdhf;as jsdhfkja sdlfal;;ashf ;akshdfkj sdf;lhs;f sadfjsk flhsdkjfh sf;asdfhlkj',
-            date: '2016/12/19'
-        },
-        {
-            id: '132',
-            title: 'My second note',
-            note: 'something',
-            date: '2017/12/19'
-        }
-    ]
+    notes: []
 }
 
 
@@ -38,8 +25,8 @@ const noteSlice = createSlice({
                 ...action.payload
             })
         },
-        removeNote(state, action:PayloadAction<NoteSliceItem>){
-            state.notes = state.notes.filter(item => item.id !== action.payload.id)
+        removeNote(state, action:PayloadAction<string>){
+            state.notes = state.notes.filter(item => item.id !== action.payload)
         },
         editNote(state, action:PayloadAction<NoteSliceItem>){
             state.notes = state.notes.map(item => {

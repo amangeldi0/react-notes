@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  word-wrap: break-word;
   @media (max-width: 450px) {
     width: 380px;
   }
@@ -22,10 +23,24 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+    .note__input{
+      background: transparent;
+      width: 90%;
+      border: none;
+      font-size: 20px;
+      color: $white-black;
+      &::placeholder{
+        color: rgba(72, 81, 103, 0.92);
+      }
+      @media (max-width: 430px) {
+        font-size: 18px;
+      }
+    }
     .note__title{
       font-size: 28px;
       color: $white-black;
       width: 90%;
+
       @media (max-width: 430px) {
         font-size: 18px;
       }
@@ -38,11 +53,38 @@
         font-size: 16px;
       }
     }
+    .note__textarea{
+      border: none;
+      background: transparent;
+      font-size: 17px;
+      color: $white-black;
+      resize: none;
+      width: 90%;
+      height: 310px;
+      &::placeholder{
+        color: rgba(72, 81, 103, 0.92);
+      }
+      @media (max-width: 430px) {
+        font-size: 16px;
+      }
+    }
   }
   .note__info{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .save{
+      padding: 5px 20px;
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      border-radius: 3px;
+      color: rgba(72, 81, 103, 0.92);
+      &:hover{
+        background: $white-black;
+        color: #fff;
+      }
+    }
     .note__date{
       color: $white-black;
       font-size: 20px;
@@ -89,13 +131,31 @@
     .note__title{
       color: white;
     }
+    .note__input{
+      color: white;
+      &::placeholder{
+        color: rgba(255, 255, 255, 0.53);
+      }
+    }
     .note__note {
       color: rgba(255, 255, 255, 0.63);
+    }
+    .note__textarea{
+      color: rgba(255, 255, 255, 0.63);
+      &::placeholder{
+        color: rgba(255, 255, 255, 0.53);
+      }
     }
   }
   .note__info{
     .note__date{
       color: white;
+    }
+    .save{
+      color: white;
+      &:hover{
+        background-color: rgba(91, 86, 86, 0.33);
+      }
     }
   }
 }

@@ -3,15 +3,22 @@ import {useAppSelector} from "../redux/hooks";
 import {noteList} from "../redux/Note/NoteSlice";
 import Note from "./Note";
 import NoteInput from "./NoteInput";
+import {isEditableInputOrTextArea} from "@testing-library/user-event/utils/edit/isEditable";
+import {search} from "../redux/Search/SearchSlice";
 
 const NoteList:FC = () => {
     const notes = useAppSelector(noteList)
+    const filter = useAppSelector(search)
+
     return (
         <div className='note__list'>
             <div className='note__list__container'>
                 {
-                    notes.map(item => {
-                        return <Note props={item} />
+                    notes
+                        .filter(item =>
+                            item.title.replace(" ", "").toLowerCase().includes(filter.toLowerCase()))
+                        .map(item => {
+                        return <Note props={item} key={item.id} />
                     })
                 }
                 <NoteInput />
