@@ -16,7 +16,7 @@ const initialState:NoteSliceType = {
         {
             id: '122',
             title: 'My first note',
-            note: 'something',
+            note: 'something kasjfhdlkasdhf;as jsdhfkja sdlfal;;ashf ;akshdfkj sdf;lhs;f sadfjsk flhsdkjfh sf;asdfhlkj',
             date: '2016/12/19'
         },
         {
