@@ -2,6 +2,7 @@ import {FC} from 'react';
 import {useAppSelector} from "../redux/hooks";
 import {noteList} from "../redux/Note/NoteSlice";
 import Note from "./Note";
+import NoteInput from "./NoteInput";
 
 const NoteList:FC = () => {
     const notes = useAppSelector(noteList)
@@ -13,6 +14,7 @@ const NoteList:FC = () => {
                         return <Note props={item} />
                     })
                 }
+                <NoteInput />
             </div>
         </div>
     );

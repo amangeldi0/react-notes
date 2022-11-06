@@ -1,6 +1,12 @@
 import {FC} from 'react';
 import {useAppSelector, useAppDispatch} from "../redux/hooks";
 import {theme} from "../redux/Theme/ThemeSlice";
+
+import trash from '../assets/trash.svg'
+import edit from '../assets/edit.svg'
+import whiteEdit from '../assets/white-edit.svg'
+import whiteTrash from '../assets/white-trash.svg'
+
 interface IPropsForNote {
     props: {
         title:string;
@@ -24,8 +30,12 @@ const Note: FC<IPropsForNote> = ({props}) => {
             <div className="note__info">
                 <div className="note__date">{date}</div>
                 <div className="note__buttons">
-                    <div className="note__edit"></div>
-                    <div className="note__delete"></div>
+                    <div className="note__edit">
+                        <img src={themeState ? whiteEdit : edit} alt="edit"/>
+                    </div>
+                    <div className="note__delete">
+                        <img src={themeState ? whiteTrash : trash} alt="trash"/>
+                    </div>
                 </div>
             </div>
         </div>

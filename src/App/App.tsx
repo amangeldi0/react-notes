@@ -5,6 +5,7 @@ import {theme} from "../redux/Theme/ThemeSlice";
 import Search from "../Components/Search";
 import Note from "../Components/NoteInput";
 import NoteList from "../Components/NoteList";
+import NoteInput from "../Components/NoteInput";
 const App = () => {
     const themeState = useAppSelector(theme)
     return (
