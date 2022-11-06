@@ -7,12 +7,17 @@ export interface NoteSliceItem {
     note: string,
     date: string
 }
-interface NoteSliceType {
-    notes: NoteSliceItem[]
-}
 
-const initialState:NoteSliceType = {
-    notes: []
+export const getCartFromLS = () => {
+    const data = localStorage.getItem('notes');
+    const items = data ? JSON.parse(data) : [];
+
+    return items as NoteSliceItem[]
+};
+console.log(getCartFromLS())
+
+const initialState = {
+    notes: getCartFromLS()
 }
 
 

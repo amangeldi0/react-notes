@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import {FC, useEffect} from 'react';
 import {useAppSelector} from "../redux/hooks";
 import {noteList} from "../redux/Note/NoteSlice";
 import Note from "./Note";
@@ -9,7 +9,9 @@ import {search} from "../redux/Search/SearchSlice";
 const NoteList:FC = () => {
     const notes = useAppSelector(noteList)
     const filter = useAppSelector(search)
-
+    useEffect(() => {
+        localStorage.setItem('notes', JSON.stringify(notes))
+    }, [notes])
     return (
         <div className='note__list'>
             <div className='note__list__container'>
