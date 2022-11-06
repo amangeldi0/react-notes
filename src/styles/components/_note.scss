@@ -2,9 +2,13 @@
   width: 400px;
   height: 430px;
   border-radius: 10px;
-  background: white;
+  background: #ffffff;
   margin: 0 auto;
-  box-shadow: 0 0 6px 1px rgba(144, 202, 249, 0.61);
+  box-shadow: 0 0 6px 1px rgba(136, 200, 252, 0.61);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   @media (max-width: 450px) {
     width: 380px;
   }
@@ -13,5 +17,85 @@
   }
   @media (max-width: 340px) {
     width: 280px;
+  }
+  .note__content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    .note__title{
+      font-size: 28px;
+      color: $white-black;
+      width: 90%;
+      @media (max-width: 430px) {
+        font-size: 18px;
+      }
+    }
+    .note__note{
+      font-size: 20px;
+      color: $white-black;
+      width: 95%;
+      @media (max-width: 430px) {
+        font-size: 16px;
+      }
+    }
+  }
+  .note__info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .note__date{
+      color: $white-black;
+      font-size: 20px;
+      @media (max-width: 430px) {
+        font-size: 16px;
+      }
+    }
+    .note__buttons{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .note__edit{
+        width: 19px;
+        height: 19px;
+        cursor: pointer;
+        @media (max-width: 430px) {
+          width: 19px;
+          height: 18px;
+        }
+        img{
+          width: 100%;
+        }
+      }
+      .note__delete{
+        cursor: pointer;
+        width: 19px;
+        height: 19px;
+        @media (max-width: 430px) {
+          width: 18px;
+          height: 18px;
+        }
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.note__container__black{
+  @extend .note__container;
+  background: rgba(60, 66, 84, 0.98);
+  box-shadow: 0 0 6px 1px rgba(60, 66, 84, 0.98);
+  .note__content{
+    .note__title{
+      color: white;
+    }
+    .note__note {
+      color: rgba(255, 255, 255, 0.63);
+    }
+  }
+  .note__info{
+    .note__date{
+      color: white;
+    }
   }
 }
